@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    transition: .5s ease-in;
+}
+.darkMode {
+    background: #222;
+    transition: .5s ease-in-out;
+}
+.container .box {
+    position: relative;
+    width: 300px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+    transition: .5s ease-in;
+}
+.darkMode .box {
+    background: #292929;
+    transition: .5s ease-in-out;
+}
+.container .profile{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container .profile .imgBx {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: rebeccapurple;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.container .profile .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.container .box .profile .text {
+    font-weight: 500;
+    color: #333;
+    line-height: 1.2em;
+    transition: .5s;
+}
+.darkMode .box .profile .text {
+    color: #fff;
+}
+.container .box .profile .text span {
+    font-weight: 400;
+    font-size: 0.85em;
+    color: #555;
+    transition: .5s;
+}
+.darkMode .box .profile .text span {
+    color: #aaa;
+}
+.container .menu {
+    position: relative;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    transition: .5s;
+}
+.darkMode .menu {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.container .menu li {
+    margin: 8px 0;
+}
+.container .menu li label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.container .menu li label span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    color: #777;
+    transition: .5s;
+}
+.darkMode .menu li label span {
+    color: #aaa;
+}
+.container .menu li label i {
+    margin-right: 10px;
+}
+.container .menu li label .action {
+    position: relative;
+}
+.container .menu li label .action input {
+    appearance: none;
+}
+.container .menu li label .action i {
+    position: relative;
+    width: 30px;
+    height: 15px;
+    background: #ddd;
+    border-radius: 15px;
+    transition: .5s;
+}
+.darkMode .container .menu li label .action i {
+    background: hsl(0, 0%, 40%);
+}
+.container .menu li label .action input:checked ~ i {
+    background: #2aa0ff;
+}
+.container .menu li label .action i::before {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+.container .menu li label .action input:checked ~ i::before {
+    left: calc(100% - 12.5px);
+}
